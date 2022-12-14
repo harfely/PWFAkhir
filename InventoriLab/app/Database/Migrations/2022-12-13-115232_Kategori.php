@@ -8,6 +8,7 @@ class Kategori extends Migration
 {
     public function up()
     {
+        
         $this->forge->addField([
             'katid' => [
                 'type' => 'int',

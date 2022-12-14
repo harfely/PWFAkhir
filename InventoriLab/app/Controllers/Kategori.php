@@ -127,11 +127,11 @@ Data berhasil di update!
     }
 
 
-    public function hapus($id) {
-                $rowData = $this->kategori->find($id);
+    public function hapus($rowData) {
+                $rowData = $this->kategori->find($rowData);
         
         if ($rowData) {
-             $this->kategori->delete($id);
+             $this->kategori->delete($rowData);
              
             $pesan = [
             'sukses' => ' <div class="alert alert-success alert-dismissible">

@@ -14,6 +14,17 @@ Manajemen Data Barang
 
 <?= session()->getFlashdata('error'); ?>
 <?= session()->getFlashdata('sukses'); ?>
+<?= form_open('barang/index') ?>
+<div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Cari data berdasarkan kode,nama,kategori" name="cari"
+        autofocus>
+    <div class="input-group-append">
+        <button class="btn btn-outline-success" type="submit" name="tombolcari">
+            <i class="fa fa-search"></i>
+        </button>
+    </div>
+</div>
+<?= form_close(); ?>
 <table class=" table table-striped table-bordered" style="width: 100%;">
     <thead>
         <tr>
