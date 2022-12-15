@@ -104,10 +104,8 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="<?= base_url() ?>/index3.html" class="brand-link">
-                <img src="<?= base_url() ?>/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
-                    class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">ADMIN UKIM</span>
+            <a href="#" class="d-block">
+                <span class="brand-text font-weight-light">LAB KOMPUTER UKIM</span>
             </a>
 
             <!-- Sidebar -->
@@ -115,8 +113,7 @@
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="<?= base_url() ?>/dist/img/user2-160x160.jpg" class="img-circle elevation-2"
-                            alt="User Image">
+                        <img src="/ukim.jpg" class="img-circle elevation-2" alt="">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">Administrator</a>
@@ -137,12 +134,6 @@
                             <a href="<?= site_url('kategori/index'); ?>" class="nav-link">
                                 <i class="nav-ico fa fa-tasks text-primary"></i>
                                 <p class="text">Kategori</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= site_url('satuan/index'); ?>" class="nav-link">
-                                <i class="nav-ico fa fa-angel-double-right text-warning"></i>
-                                <p class="text">Satuan</p>
                             </a>
                         </li>
                         <li class="nav-item">

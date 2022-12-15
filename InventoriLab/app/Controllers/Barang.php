@@ -14,20 +14,9 @@ class Barang extends BaseController
     }
     public function index()
     {
-        $tombolcari = $this->request->getPost('tombolcari');
-        if (isset($tombolcari)) {
-            $cari = $this->request->getPost('cari');
-            session()->set('cari_barang', $cari);
-            redirect()->to('/barang/index');
-        }else{
-            $cari = session()->get('cari_barang');
-        }
-
-        $dataBarang = $cari ? $this->barang->tampildata_cari($cari)->paginate(10, 'barang') : $this->barang->tampildata()->paginate(10, 'barang');
         
         $data = [
-            'tampildata' => $dataBarang,
-            'pager' => $this->barang->pager
+            'tampildata' => $this->barang->tampildata()
         ];
         return view('barang/viewbarang', $data);
     }
