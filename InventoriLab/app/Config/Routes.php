@@ -42,6 +42,13 @@ $routes->delete('/kategori/hapus/(:any)', 'Kategori::hapus/$1');
 $routes->get('/barang/hapus/(:any)', 'Barang::index');
 $routes->delete('/barang/hapus/(:any)', 'Barang::hapus/$1');
 
+$routes->get('/register', 'Register::index');
+$routes->post('/register/process', 'Register::process');
+
+$routes->get('/login', 'Login::index');
+$routes->post('/login/process', 'Login::process');
+$routes->get('/logout', 'Login::logout');
+
 
 /*
  * --------------------------------------------------------------------

@@ -116,7 +116,8 @@
                         <img src="/ukim.jpg" class="img-circle elevation-2" alt="">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Administrator</a>
+                        <a href="#" class="nav-link">Admin</a>
+                        <a class="nav-link" href="<?= base_url(); ?>/logout">Logout</a>
                     </div>
                 </div>
 
