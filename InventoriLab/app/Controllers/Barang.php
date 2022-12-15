@@ -14,8 +14,20 @@ class Barang extends BaseController
     }
     public function index()
     {
+        $tombolcari = $this->request->getPost('tombolcari');
+        if (isset($tombolcari)) {
+            $cari = $this->request->getPost('cari');
+            session()->set('cari_barang', $cari);
+            redirect()->to('/barang/index');
+        }else{
+            $cari = session()->get('cari_barang');
+        }
+
+        $dataBarang = $cari ? $this->barang->tampildata_cari($cari)->paginate(10, 'barang') : $this->barang->tampildata()->paginate(10, 'barang');
+        
         $data = [
-            'tampildata' => $this->barang->tampildata()
+            'tampildata' => $dataBarang,
+            'pager' => $this->barang->pager
         ];
         return view('barang/viewbarang', $data);
     }
@@ -88,10 +100,10 @@ class Barang extends BaseController
             'numeric' => '{field} harga hanya dalam bentuk angka'
             ]
             ],
-            'gambar' =>[
-                'rules' => 'mime_in[gambar,image/png,image/jpeg,image/jpg]|ext_in[gambar,png,jpg,jpeg]',
-                'label' => 'Gambar', 
-            ]
+            // 'gambar' =>[
+            //     'rules' => 'mime_in[gambar,image/png,image/jpeg,image/jpg]|ext_in[gambar,png,jpg,jpeg]',
+            //     'label' => 'Gambar', 
+            // ]
         ]);
         
         if(!$valid){

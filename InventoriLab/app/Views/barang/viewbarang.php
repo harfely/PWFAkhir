@@ -41,7 +41,7 @@ Manajemen Data Barang
     <tbody>
         <?php 
         $nomor=1;
-        foreach($tampildata->getResultArray() as $row):
+        foreach($tampildata as $row):
         ?>
         <tr>
             <td><?= $nomor++; ?></td>
